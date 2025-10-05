@@ -1,43 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Explorer  Lab 1</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Explorer Lab 1</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- ✅ Font Awesome CDN -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    integrity="sha512-8F6+iP+EvE6ydZj2tUyyuqC2r9KcVFYFS3hBe5yRpiM2rA3DdC5NydsM+h1hv76b6F7XYXOKwR2lNkaT8VJpKw=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
-<body class="bg-gray-50 text-gray-800"
->
-<nav class="bg-white shadow-md">
-<div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
-<h1 class="text-2xl font-bold text-emerald-600"> Book Explorer</h1>
-<div class="space-x-6">
-   <a href="#" class="hover:text-emerald-600">Home</a>
-        <a href="#" class="hover:text-emerald-600">Favorites</a>
-        <a href="#" class="hover:text-emerald-600">About</a>
-</div>
-</div>
-</nav>
-    <section class="relative bg-cover bg-center h-[400px]" style="background-image: url('./Assets/image.png');">
- <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center px-6">
-      <h1 class="text-white text-5xl font-extrabold mb-4">Discover Your Next Favorite Book</h1>
-      <p class="text-gray-200 max-w-2xl">Browse, explore, and be inspired by great reads.</p>
+
+<body class="bg-gray-50 text-gray-800 flex">
+
+  <!-- ✅ Vertical Navbar -->
+  <nav class="fixed top-0 left-0 h-screen w-24 bg-white shadow-lg flex flex-col items-center py-8 space-y-12">
+    <div class="flex flex-col items-center space-y-8 text-gray-700">
+      <button class="flex flex-col items-center group transition duration-200">
+        <i class="fas fa-home text-2xl text-rose-800 group-hover:text-[#92400E]"></i>
+        <span class="text-sm mt-1 font-semibold group-hover:text-[#92400E]">Home</span>
+      </button>
+
+      <button class="flex flex-col items-center group transition duration-200">
+        <i class="fas fa-heart text-2xl text-gray-600 group-hover:text-[#92400E]"></i>
+        <span class="text-sm mt-1 font-semibold group-hover:text-[#92400E]">Favorites</span>
+      </button>
+
+      <button class="flex flex-col items-center group transition duration-200">
+        <i class="fas fa-info-circle text-2xl text-gray-600 group-hover:text-[#92400E]"></i>
+        <span class="text-sm mt-1 font-semibold group-hover:text-[#92400E]">About</span>
+      </button>
     </div>
-    </section>
-    <main class="max-w-7xl mx-auto px-4 py-10">
- <h2 class="text-2xl font-bold mb-6 text-emerald-700">Book Collection</h2>
- <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
-        <div class="h-56 bg-gray-200"></div>
-        <div class="p-4">
-          <h3 class="font-bold text-lg mb-2">Book Title</h3>
-          <p class="text-sm text-gray-500">Author Name</p>
+  </nav>
+
+  <!-- ✅ Main Content Area -->
+  <div class="ml-24 flex-1">
+
+    <!-- Hero Section -->
+    <section class="relative bg-cover bg-center h-[500px]" style="background-image: url('./Assets/image.png');">
+      <!-- Transparent Overlay -->
+      <div class="absolute inset-0 bg-gray-200 bg-opacity-15"></div>
+
+      <div class="relative flex flex-col justify-center items-center text-center px-6 h-full">
+        <h1 class="text-white text-5xl font-extrabold mb-4">Discover Your Next Favorite Book</h1>
+        <p class="text-gray-200 max-w-2xl mb-8">Browse, explore, and be inspired by great reads.</p>
+
+        <!-- ✅ Search Bar -->
+        <div class="flex items-center bg-white rounded-full shadow-lg overflow-hidden max-w-xl w-full">
+          <input
+            type="text"
+            placeholder="Search for books..."
+            class="flex-grow px-4 py-2 text-gray-700 outline-none"
+          />
+          <button class="bg-rose-800 hover:bg-rose-700 text-white px-5 py-2 flex items-center gap-2">
+            <i class="fas fa-search"></i>
+            Search
+          </button>
+        </div>
+
+        <!-- ✅ Feature Cards -->
+        <div class="flex flex-wrap justify-center gap-6 mt-12 text-gray-900">
+          <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md text-center w-36">
+            <i class="fas fa-book-open text-3xl text-rose-800 mb-2"></i>
+            <h3 class="text-2xl font-bold">10K+</h3>
+            <p class="text-sm text-gray-500">Books</p>
+          </div>
+          <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md text-center w-36">
+            <i class="fas fa-users text-3xl text-rose-800 mb-2"></i>
+            <h3 class="text-2xl font-bold">5K+</h3>
+            <p class="text-sm text-gray-500">Readers</p>
+          </div>
+          <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md text-center w-36">
+            <i class="fas fa-book text-3xl text-rose-800 mb-2"></i>
+            <h3 class="text-2xl font-bold">100+</h3>
+            <p class="text-sm text-gray-500">Daily</p>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Main Book Collection Section -->
+    <main class="max-w-7xl mx-auto px-4 py-10">
+      <h2 class="text-2xl font-bold mb-6 text-emerald-700">Book Collection</h2>
+      <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        <div class="bg-white shadow-md rounded-lg overflow-hidden">
+          <div class="h-56 bg-gray-200"></div>
+          <div class="p-4">
+            <h3 class="font-bold text-lg mb-2">Book Title</h3>
+            <p class="text-sm text-gray-500">Author Name</p>
+          </div>
+        </div>
+      </div>
     </main>
+
     <footer class="bg-emerald-700 text-white text-center py-4">
-    <p>&copy; 2025 Book Explorer</p>
-  </footer>
+      <p>&copy; 2025 Book Explorer</p>
+    </footer>
+  </div>
 </body>
 </html>
