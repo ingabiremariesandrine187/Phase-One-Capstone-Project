@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Explorer  Lab 1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 text-gray-800"
+>
+<nav class="bg-white shadow-md">
+<div class="max-w-7xl mx-auto px-4 py-3 flex justify-between items-center">
+<h1 class="text-2xl font-bold text-emerald-600"> Book Explorer</h1>
+<div class="space-x-6">
+   <a href="#" class="hover:text-emerald-600">Home</a>
+        <a href="#" class="hover:text-emerald-600">Favorites</a>
+        <a href="#" class="hover:text-emerald-600">About</a>
+</div>
+</div>
+</nav>
+    <section class="relative bg-cover bg-center h-[400px]" style="background-image: url('./Assets/image.png');">
+ <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center text-center px-6">
+      <h1 class="text-white text-5xl font-extrabold mb-4">Discover Your Next Favorite Book</h1>
+      <p class="text-gray-200 max-w-2xl">Browse, explore, and be inspired by great reads.</p>
+    </div>
+    </section>
+    <main class="max-w-7xl mx-auto px-4 py-10">
+ <h2 class="text-2xl font-bold mb-6 text-emerald-700">Book Collection</h2>
+ <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+        <div class="h-56 bg-gray-200"></div>
+        <div class="p-4">
+          <h3 class="font-bold text-lg mb-2">Book Title</h3>
+          <p class="text-sm text-gray-500">Author Name</p>
+        </div>
+      </div>
+    </div>
+    </main>
+    <footer class="bg-emerald-700 text-white text-center py-4">
+    <p>&copy; 2025 Book Explorer</p>
+  </footer>
+</body>
+</html>
