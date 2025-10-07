@@ -66,60 +66,61 @@
   <div class="flex flex-col">
 
    <!-- Hero Section -->
-<section class="relative bg-cover bg-center h-[500px]" style="background-image: url('./Assets/image.png');">
+<!-- Hero Section -->
+<section class="relative bg-cover bg-center h-[500px] md:h-[600px] lg:h-[700px] xl:h-[800px]" style="background-image: url('./Assets/image.png');">
+  <!-- Overlay -->
   <div class="absolute inset-0 bg-gray-800 bg-opacity-20"></div>
-  <div class="relative flex flex-col justify-center items-center text-center px-6 h-full">
-    <h1 class="text-white text-5xl font-extrabold mb-4 animated-text">
+
+  <!-- Content -->
+  <div class="relative flex flex-col justify-center items-center text-center px-4 sm:px-6 lg:px-8 h-full">
+    <h1 class="text-white font-extrabold mb-4 text-3xl sm:text-4xl md:text-5xl lg:text-6xl animated-text leading-snug">
       <span style="--i:1">D</span><span style="--i:2">i</span><span style="--i:3">s</span><span style="--i:4">c</span><span style="--i:5">o</span><span style="--i:6">v</span><span style="--i:7">e</span><span style="--i:8">r</span><span style="--i:9"> </span>
       <span style="--i:10">Y</span><span style="--i:11">o</span><span style="--i:12">u</span><span style="--i:13">r</span><span style="--i:14"> </span>
       <span style="--i:15">N</span><span style="--i:16">e</span><span style="--i:17">x</span><span style="--i:18">t</span><span style="--i:19"> </span>
       <span style="--i:20">F</span><span style="--i:21">a</span><span style="--i:22">v</span><span style="--i:23">o</span><span style="--i:24">r</span><span style="--i:25">i</span><span style="--i:26">t</span><span style="--i:27">e</span><span style="--i:28"> </span>
       <span style="--i:29">B</span><span style="--i:30">o</span><span style="--i:31">o</span><span style="--i:32">k</span>
     </h1>
-    <p class="text-gray-200 max-w-2xl mb-8">Browse, explore, and be inspired by great reads.</p>
 
-    <!-- Search bar -->
-    <!-- <div class="flex items-center bg-white rounded-full shadow-lg overflow-hidden max-w-xl w-full">
-      <input type="text" placeholder="Search for books..." class="flex-grow px-4 py-2 text-gray-700 outline-none"/>
-      <button class="bg-yellow-800 hover:bg-yellow-700 text-white px-5 py-2 flex items-center gap-2">
+    <p class="text-gray-200 max-w-2xl mb-8 text-sm sm:text-base md:text-lg">
+      Browse, explore, and be inspired by great reads.
+    </p>
+
+    <!-- Search Bar -->
+    <div class="flex items-center bg-white rounded-full shadow-lg overflow-hidden max-w-xl w-full mx-auto">
+      <input 
+        id="searchInput"
+        type="text" 
+        placeholder="Search for books..." 
+        class="flex-grow px-4 py-2 text-gray-700 text-sm sm:text-base outline-none"
+      />
+      <button 
+        id="searchButton"
+        class="bg-yellow-800 hover:bg-yellow-700 text-white px-4 sm:px-5 py-2 flex items-center gap-2 text-sm sm:text-base">
         <i class="fas fa-search"></i> Search
       </button>
-    </div> -->
+    </div>
 
-    <div class="flex items-center bg-white rounded-full shadow-lg overflow-hidden max-w-xl w-full">
-  <input 
-    id="searchInput"
-    type="text" 
-    placeholder="Search for books..." 
-    class="flex-grow px-4 py-2 text-gray-700 outline-none"
-  />
-  <button 
-    id="searchButton"
-    class="bg-yellow-800 hover:bg-yellow-700 text-white px-5 py-2 flex items-center gap-2">
-    <i class="fas fa-search"></i> Search
-  </button>
-</div>
-
-    <!-- Stats cards -->
-    <div class="flex flex-wrap justify-center gap-6 mt-12 text-gray-900">
-      <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md text-center w-36">
-        <i class="fas fa-book-open text-3xl  text-gray-800 mb-2"></i>
-        <h3 class="text-2xl font-bold">10K+</h3>
-        <p class="text-sm text-gray-500">Books</p>
+    <!-- Stats Cards -->
+    <div class="flex flex-wrap justify-center gap-4 md:gap-6 mt-8 md:mt-12 text-gray-900">
+      <div class="bg-white bg-opacity-90 p-4 sm:p-6 rounded-xl shadow-md text-center w-28 sm:w-36">
+        <i class="fas fa-book-open text-2xl sm:text-3xl text-gray-800 mb-1 sm:mb-2"></i>
+        <h3 class="text-lg sm:text-2xl font-bold">10K+</h3>
+        <p class="text-xs sm:text-sm text-gray-500">Books</p>
       </div>
-      <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md text-center w-36">
-        <i class="fas fa-users text-3xl  text-gray-800 mb-2"></i>
-        <h3 class="text-2xl font-bold">5K+</h3>
-        <p class="text-sm text-gray-500">Readers</p>
+      <div class="bg-white bg-opacity-90 p-4 sm:p-6 rounded-xl shadow-md text-center w-28 sm:w-36">
+        <i class="fas fa-users text-2xl sm:text-3xl text-gray-800 mb-1 sm:mb-2"></i>
+        <h3 class="text-lg sm:text-2xl font-bold">5K+</h3>
+        <p class="text-xs sm:text-sm text-gray-500">Readers</p>
       </div>
-      <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md text-center w-36">
-        <i class="fas fa-book text-3xl text-gray-800 mb-2"></i>
-        <h3 class="text-2xl font-bold">100+</h3>
-        <p class="text-sm text-gray-500">Daily</p>
+      <div class="bg-white bg-opacity-90 p-4 sm:p-6 rounded-xl shadow-md text-center w-28 sm:w-36">
+        <i class="fas fa-book text-2xl sm:text-3xl text-gray-800 mb-1 sm:mb-2"></i>
+        <h3 class="text-lg sm:text-2xl font-bold">100+</h3>
+        <p class="text-xs sm:text-sm text-gray-500">Daily</p>
       </div>
     </div>
   </div>
 </section>
+
 
     <!-- Book Section -->
     <main class="max-w-7xl mx-auto px-4 py-10">
