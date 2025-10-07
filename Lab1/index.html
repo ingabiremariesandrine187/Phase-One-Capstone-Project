@@ -79,12 +79,26 @@
     <p class="text-gray-200 max-w-2xl mb-8">Browse, explore, and be inspired by great reads.</p>
 
     <!-- Search bar -->
-    <div class="flex items-center bg-white rounded-full shadow-lg overflow-hidden max-w-xl w-full">
+    <!-- <div class="flex items-center bg-white rounded-full shadow-lg overflow-hidden max-w-xl w-full">
       <input type="text" placeholder="Search for books..." class="flex-grow px-4 py-2 text-gray-700 outline-none"/>
       <button class="bg-yellow-800 hover:bg-yellow-700 text-white px-5 py-2 flex items-center gap-2">
         <i class="fas fa-search"></i> Search
       </button>
-    </div>
+    </div> -->
+
+    <div class="flex items-center bg-white rounded-full shadow-lg overflow-hidden max-w-xl w-full">
+  <input 
+    id="searchInput"
+    type="text" 
+    placeholder="Search for books..." 
+    class="flex-grow px-4 py-2 text-gray-700 outline-none"
+  />
+  <button 
+    id="searchButton"
+    class="bg-yellow-800 hover:bg-yellow-700 text-white px-5 py-2 flex items-center gap-2">
+    <i class="fas fa-search"></i> Search
+  </button>
+</div>
 
     <!-- Stats cards -->
     <div class="flex flex-wrap justify-center gap-6 mt-12 text-gray-900">

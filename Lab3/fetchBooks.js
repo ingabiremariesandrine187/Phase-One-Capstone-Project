@@ -2,25 +2,35 @@
 
 // Fetch books from Open Library API
 async function fetchBooks(query = "javascript") {
-  const url = `https://openlibrary.org/search.json?q=${query}&limit=12`;
-  const response = await fetch(url);
-  const data = await response.json();
-
-  // Render the books
-  renderBooks(data.docs);
+  const url = `https://openlibrary.org/search.json?q=${encodeURIComponent(query)}&limit=12`;
+  
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    renderBooks(data.docs);
+  } catch (error) {
+    console.error("Error fetching books:", error);
+    const container = document.querySelector("main");
+    container.innerHTML = `
+      <h2 class="text-2xl font-bold mb-6 text-yellow-800">Book Collection</h2>
+      <p class="text-red-500 text-center">Failed to load books. Please try again.</p>
+    `;
+  }
 }
 
 // Render book cards in index.html
 function renderBooks(books) {
   const container = document.querySelector("main");
+  container.innerHTML = `
+    <h2 class="text-2xl font-bold mb-6 text-yellow-800">Book Collection</h2>
+  `;
 
-  // Create a section for the book cards
   const bookGrid = document.createElement("div");
   bookGrid.className = "grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4";
 
-  // If no books
   if (books.length === 0) {
-    container.innerHTML = `<p class="text-gray-600 text-center col-span-full">No books found.</p>`;
+    bookGrid.innerHTML = `<p class="text-gray-600 text-center col-span-full">No books found.</p>`;
+    container.appendChild(bookGrid);
     return;
   }
 
@@ -77,17 +87,21 @@ function renderBooks(books) {
 document.addEventListener("DOMContentLoaded", () => {
   fetchBooks();
 
-  // Optional: Add search functionality
-  const searchInput = document.querySelector("input[type='text']");
-  const searchButton = document.querySelector("button");
+  const searchInput = document.getElementById("searchInput");
+  const searchButton = document.getElementById("searchButton");
 
-  if (searchButton) {
+  if (searchButton && searchInput) {
     searchButton.addEventListener("click", () => {
-      const query = searchInput.value.trim() || "javascript";
-      document.querySelector("main").innerHTML = `
-        <h2 class="text-2xl font-bold mb-6 text-yellow-800">Book Collection</h2>
-      `;
-      fetchBooks(query);
+      const query = searchInput.value.trim();
+      fetchBooks(query || "javascript");
+    });
+
+    // Also allow Enter key search
+    searchInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        const query = searchInput.value.trim();
+        fetchBooks(query || "javascript");
+      }
     });
   }
 });
