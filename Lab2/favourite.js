@@ -17,9 +17,9 @@ function addToFavorites(book) {
   if (!exists) {
     favorites.push(book);
     saveFavorites(favorites);
-    alert(`✅ "${book.title}" added to favorites!`);
+    alert(` "${book.title}" added to favorites!`);
   } else {
-    alert(`⚠️ "${book.title}" is already in favorites.`);
+    alert(` "${book.title}" is already in favorites.`);
   }
 }
 
