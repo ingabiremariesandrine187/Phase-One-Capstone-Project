@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Favorites - Book Explorer</title>
+  <title>About - Book Explorer</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -12,11 +12,6 @@
       opacity: 1;
       visibility: visible;
       transform: translateY(0);
-    }
-
-    /* Smooth transitions */
-    nav a {
-      transition: all 0.3s ease-in-out;
     }
   </style>
 </head>
@@ -32,48 +27,70 @@
 
   <!-- Overlay Navbar -->
   <nav id="mobile-nav"
-    class="fixed top-20 right-6 bg-white text-gray-900 rounded-2xl shadow-xl flex flex-col items-center justify-center space-y-6 text-lg font-bold opacity-0 visibility-hidden transform -translate-y-5 transition-all duration-500 z-40 w-56 py-8">
+    class="fixed top-20 right-6 bg-white text-gray-900 rounded-2xl shadow-xl flex flex-col items-center justify-center space-y-6 text-lg font-bold opacity-0 invisible transform -translate-y-5 transition-all duration-500 z-40 w-56 py-8">
     
-    <a href="../Lab1/index.html" class="flex flex-col items-center hover:scale-110 hover:text-yellow-800 transition-all duration-200">
+    <a href="index.html" class="flex flex-col items-center hover:scale-110 hover:text-yellow-800 transition-all duration-200">
       <i class="fas fa-home text-3xl mb-2"></i>
       <span>Home</span>
     </a>
 
-  <a 
-    href="./favourite.html" 
-    class="flex flex-col items-center hover:scale-110 hover:text-yellow-800 transition-all duration-200"
-    onclick="navigateTo('favourite.html')">
-    <i class="fas fa-heart text-3xl mb-2"></i>
-    <span>Favorites</span>
-  </a>
+    <a href="../Lab2/favourite.html" class="flex flex-col items-center hover:scale-110 hover:text-yellow-800 transition-all duration-200">
+      <i class="fas fa-heart text-3xl mb-2"></i>
+      <span>Favorites</span>
+    </a>
 
-    <a href="../Lab1/about.html" class="flex flex-col items-center hover:scale-110 hover:text-yellow-800 transition-all duration-200">
+    <a href="about.html" class="flex flex-col items-center hover:scale-110 hover:text-yellow-800 transition-all duration-200">
       <i class="fas fa-info-circle text-3xl mb-2"></i>
       <span>About</span>
     </a>
   </nav>
 
-  <!-- Page Content -->
-  <main class="flex-grow max-w-7xl mx-auto px-4 py-10">
-    <h2 class="text-2xl font-bold mb-6 text-yellow-800">Your Favorite Books</h2>
+  <!-- About Section -->
+  <main class="flex-grow max-w-6xl mx-auto px-6 py-20">
+    <div class="text-center mb-12">
+      <h1 class="text-4xl font-extrabold text-yellow-800 mb-4">About Book Explorer</h1>
+      <p class="text-gray-600 max-w-2xl mx-auto">
+        Book Explorer is your gateway to a world of stories, ideas, and imagination. Our mission is to make book discovery easy, enjoyable, and inspiring for every reader.
+      </p>
+    </div>
 
-    <!-- Container where favorites will be rendered -->
-    <div id="favorites-list" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
-      <!-- JS will populate favorite books here -->
-      <!-- Example placeholder card for responsiveness preview -->
-      <!--
-      <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition transform hover:-translate-y-1">
-        <div class="h-56 w-full overflow-hidden">
-          <img src="https://via.placeholder.com/150x220" alt="Book" class="h-full w-full object-cover">
+    <!-- Mission Section -->
+    <section class="grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <img src="../Lab1//Assets/Book1.avif" alt="About Books" class="rounded-xl shadow-lg">
+      </div>
+      <div>
+        <h2 class="text-2xl font-bold text-yellow-800 mb-4">Our Mission</h2>
+        <p class="text-gray-700 leading-relaxed mb-4">
+          We believe that books have the power to change lives. Whether you love fiction, history, or self-development, Book Explorer connects you with titles you'll love — all in one place.
+        </p>
+        <p class="text-gray-700 leading-relaxed">
+          From timeless classics to trending new releases, we bring you a personalized experience to discover, save, and share your favorite reads. Join our growing community of book lovers today!
+        </p>
+      </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="mt-16">
+      <h2 class="text-3xl font-bold text-center text-yellow-800 mb-10">Why Choose Book Explorer?</h2>
+      <div class="grid md:grid-cols-3 gap-8 text-center">
+        <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition">
+          <i class="fas fa-search text-yellow-800 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Smart Search</h3>
+          <p class="text-gray-600">Quickly find books by title, author, or genre with our powerful search feature.</p>
         </div>
-        <div class="p-4">
-          <h3 class="font-bold text-lg mb-1">Book Title</h3>
-          <p class="text-sm text-gray-500 mb-3">by Author Name</p>
-          <button class="bg-yellow-800 hover:bg-yellow-700 text-white px-4 py-2 rounded w-full transition">Remove</button>
+        <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition">
+          <i class="fas fa-heart text-yellow-800 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Save Favorites</h3>
+          <p class="text-gray-600">Keep track of your favorite books and revisit them anytime with a single click.</p>
+        </div>
+        <div class="bg-white shadow-md rounded-xl p-6 hover:shadow-lg transition">
+          <i class="fas fa-users text-yellow-800 text-4xl mb-4"></i>
+          <h3 class="text-xl font-semibold mb-2">Join the Community</h3>
+          <p class="text-gray-600">Connect with readers who share your passion for books and exchange ideas.</p>
         </div>
       </div>
-      -->
-    </div>
+    </section>
   </main>
 
   <!-- Footer -->
@@ -97,7 +114,7 @@
         <ul class="space-y-2 text-gray-300">
           <li><a href="index.html" class="hover:text-yellow-300 transition-colors">Home</a></li>
           <li><a href="about.html" class="hover:text-yellow-300 transition-colors">About</a></li>
-          <li><a href="favourite.html" class="hover:text-yellow-300 transition-colors">Favorites</a></li>
+          <li><a href="../Lab2/favourite.html" class="hover:text-yellow-300 transition-colors">Favorites</a></li>
         </ul>
       </div>
 
@@ -130,28 +147,6 @@
       <p>&copy; 2025 <span class="font-semibold text-white">Book Explorer</span>. All Rights Reserved.</p>
     </div>
   </footer>
-
-  <script src="favourite.js"></script>
-  <script>
-    // Render favorites on page load
-    window.addEventListener("DOMContentLoaded", () => {
-      renderFavorites();
-    });
-
-
-    function navigateTo(page) {
-    // Close the menu first
-    document.getElementById('menu-toggle').checked = false;
-    // Wait a short moment for animation, then navigate
-    setTimeout(() => {
-      window.location.href = page;
-    }, 200);
-  }
-  </script>
-
-
-
-
 
 </body>
 </html>
