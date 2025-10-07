@@ -1,9 +1,4 @@
-// favourite.js
-// Lab 2: DOM Interactivity & JavaScript Modules
-
-// -------------------------------
-// Helper functions for favorites
-// -------------------------------
+// Lab2/favourite.js
 
 // Get favorites from localStorage
 function getFavorites() {
@@ -18,7 +13,6 @@ function saveFavorites(favorites) {
 // Add a book to favorites
 function addToFavorites(book) {
   const favorites = getFavorites();
-  // Check if it already exists
   const exists = favorites.some(fav => fav.title === book.title);
   if (!exists) {
     favorites.push(book);
@@ -29,50 +23,24 @@ function addToFavorites(book) {
   }
 }
 
-// Remove a book from favorites
+// Remove from favorites
 function removeFromFavorites(title) {
   let favorites = getFavorites();
   favorites = favorites.filter(fav => fav.title !== title);
   saveFavorites(favorites);
-  renderFavorites(); // re-render list after removal
+  renderFavorites();
 }
 
-// -------------------------------
-// DOM Manipulation
-// -------------------------------
-
-// Add event listeners to all "Add to Favorites" buttons
-document.addEventListener("DOMContentLoaded", () => {
-  const favButtons = document.querySelectorAll(".add-fav-btn");
-
-  favButtons.forEach(button => {
-    button.addEventListener("click", () => {
-      const book = {
-        title: button.dataset.title,
-        author: button.dataset.author,
-        img: button.dataset.img
-      };
-      addToFavorites(book);
-    });
-  });
-
-  // If favorites list exists (on favourite.html), render it
-  renderFavorites();
-});
-
-// Render favorite books on favourites.html
+// Render favorites (for favourite.html)
 function renderFavorites() {
   const container = document.getElementById("favorites-list");
-  if (!container) return; // Only run on favourites.html
+  if (!container) return;
 
   const favorites = getFavorites();
   container.innerHTML = "";
 
   if (favorites.length === 0) {
-    container.innerHTML = `
-      <p class="text-gray-600 text-center col-span-full">
-         No favorite books yet. Go back and add some!
-      </p>`;
+    container.innerHTML = `<p class="text-gray-600 text-center col-span-full">💔 No favorite books yet.</p>`;
     return;
   }
 
@@ -97,11 +65,10 @@ function renderFavorites() {
         </button>
       </div>
     `;
-
     container.appendChild(card);
   });
 
-  // Add event listeners for remove buttons
+  // Attach remove events
   document.querySelectorAll(".remove-fav-btn").forEach(btn => {
     btn.addEventListener("click", () => {
       const title = btn.dataset.title;

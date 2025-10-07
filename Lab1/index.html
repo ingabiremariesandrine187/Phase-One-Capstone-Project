@@ -111,136 +111,7 @@
     <main class="max-w-7xl mx-auto px-4 py-10">
   <h2 class="text-2xl font-bold mb-6 text-yellow-800">Book Collection</h2>
 
-  <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-    <!-- Book Card 1 -->
-   <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition transform hover:-translate-y-1">
-  <!-- Book Cover Image -->
-  <div class="h-56 w-full overflow-hidden">
-  <img 
-    src="./assets/Book1.avif" 
-    alt="Book Cover" 
-    class="h-full w-full object-cover transform hover:scale-105 transition duration-500"
-  />
-</div>
-
-
-  <!-- Book Info -->
-  <div class="p-4 flex flex-col justify-between">
-    <div>
-      <h3 class="font-bold text-lg mb-1">The Great Adventure</h3>
-      <p class="text-sm text-gray-500 mb-3">by Marie</p>
-    </div>
-
-    <!-- Add to Favorites Button -->
-    <button 
-  class="add-fav-btn bg-yellow-800 hover:bg-yellow-700 text-white px-4 py-2 rounded w-full flex items-center justify-center gap-2 transition"
-  data-title="The Great Adventure"
-  data-author="Marie"
-  data-img="./assets/Book1.avif">
-  <i class="fa-solid fa-heart"></i> Add to Favorites
-</button>
-  </div>
-</div>
-
-
-    <!-- Book Card 2 -->
-    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
-  <!-- Link around the image -->
-  <a href="https://example.com/book1" target="_blank" class="block">
-    <div class="h-56 bg-gray-200 flex items-center justify-center">
-      <img 
-        src="./assets/Book2.jpeg" 
-        alt="Secrets of the Ocean" 
-        class="h-full w-full object-cover"
-      />
-    </div>
-  </a>
-
-  <div class="p-4 flex flex-col justify-between">
-    <div>
-      <!-- Link around the title -->
-      <a href="https://example.com/book1" target="_blank" class="hover:underline">
-        <h3 class="font-bold text-lg mb-1">Mysteries of the Deep Sea</h3>
-      </a>
-      <p class="text-sm text-gray-500 mb-3">by Sandrine</p>
-    </div>
-
-    <button 
-  class="add-fav-btn bg-yellow-800 hover:bg-yellow-700 text-white px-4 py-2 rounded w-full"
-  data-title="Secrets of the Ocean"
-  data-author="Sandrine"
-  data-img="./assets/Book2.jpeg">
-  <i class="fa-solid fa-heart"></i> Add to Favorites
-</button>
-  </div>
-</div>
-
-
-    <!-- Book Card 3 -->
-    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
-  <!-- Link around the image -->
-  <a href="https://example.com/book1" target="_blank" class="block">
-    <div class="h-56 bg-gray-200 flex items-center justify-center">
-      <img 
-        src="./assets/Book3.jpeg" 
-        alt="Secrets of the Ocean" 
-        class="h-full w-full object-cover"
-      />
-    </div>
-  </a>
-
-  <div class="p-4 flex flex-col justify-between">
-    <div>
-      <!-- Link around the title -->
-      <a href="https://example.com/book1" target="_blank" class="hover:underline">
-        <h3 class="font-bold text-lg mb-1">Whispers in the Forest</h3>
-      </a>
-      <p class="text-sm text-gray-500 mb-3">by Sandrine</p>
-    </div>
-
-    <button 
-  class="add-fav-btn bg-yellow-800 hover:bg-yellow-700 text-white px-4 py-2 rounded w-full"
-  data-title="Secrets of the Ocean"
-  data-author="Sandrine"
-  data-img="./assets/Book3.jpeg">
-  <i class="fa-solid fa-heart"></i> Add to Favorites
-</button>
-  </div>
-</div>
-
-
-    <!-- Book Card 4 -->
-   <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
-  <!-- Link around the image -->
-  <a href="https://example.com/book1" target="_blank" class="block">
-    <div class="h-56 bg-gray-200 flex items-center justify-center">
-      <img 
-        src="./assets/book4.jpeg" 
-        alt="Secrets of the Ocean" 
-        class="h-full w-full object-cover"
-      />
-    </div>
-  </a>
-
-  <div class="p-4 flex flex-col justify-between">
-    <div>
-      <!-- Link around the title -->
-      <a href="https://example.com/book1" target="_blank" class="hover:underline">
-        <h3 class="font-bold text-lg mb-1">Secrets of the Ocean</h3>
-      </a>
-      <p class="text-sm text-gray-500 mb-3">by Sandrine</p>
-    </div>
-
-   <button 
-  class="add-fav-btn bg-yellow-800 hover:bg-yellow-700 text-white px-4 py-2 rounded w-full"
-  data-title="Secrets of the Ocean"
-  data-author="Sandrine"
-  data-img="./assets/book4.jpeg">
-  <i class="fa-solid fa-heart"></i> Add to Favorites
-</button>
-  </div>
-</div>
-  </div>
+  
   
 </main>
 
@@ -302,5 +173,6 @@
 
   </div>
   <script src="../Lab2/favourite.js"></script>
+  <script src="../Lab3/fetchBooks.js"></script>
 </body>
 </html>
