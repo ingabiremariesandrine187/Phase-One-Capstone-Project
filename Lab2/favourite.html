@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Favorites - Book Explorer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    /* Overlay menu toggle without JS */
+    #menu-toggle:checked + label + nav {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 relative overflow-x-hidden min-h-screen flex flex-col">
+
+  <!-- Hidden Checkbox for Toggle -->
+  <input type="checkbox" id="menu-toggle" class="hidden">
+
+  <!-- Hamburger Menu Icon -->
+  <label for="menu-toggle" class="fixed top-6 right-6 z-50 cursor-pointer bg-white bg-opacity-90 p-3 rounded-md shadow-lg text-yellow-800 hover:bg-opacity-100">
+    <i class="fa-solid fa-bars text-2xl"></i>
+  </label>
+
+  <!-- Overlay Navbar -->
+  <nav id="mobile-nav"
+    class="fixed top-20 right-6 bg-white text-gray-900 rounded-2xl shadow-xl flex flex-col items-center justify-center space-y-6 text-lg font-bold opacity-0 visibility-hidden transform -translate-y-5 transition-all duration-500 z-40 w-56 py-8">
+    
+    <a href="index.html" class="flex flex-col items-center hover:scale-110 hover:text-yellow-800 transition-all duration-200">
+      <i class="fas fa-home text-3xl mb-2"></i>
+      <span>Home</span>
+    </a>
+
+    <a href="favourite.html" class="flex flex-col items-center hover:scale-110 hover:text-yellow-800 transition-all duration-200">
+      <i class="fas fa-heart text-3xl mb-2"></i>
+      <span>Favorites</span>
+    </a>
+
+    <a href="about.html" class="flex flex-col items-center hover:scale-110 hover:text-yellow-800 transition-all duration-200">
+      <i class="fas fa-info-circle text-3xl mb-2"></i>
+      <span>About</span>
+    </a>
+  </nav>
+
+  <!-- Page Content -->
+  <main class="flex-grow max-w-7xl mx-auto px-4 py-10">m
+    <h2 class="text-2xl font-bold mb-6 text-yellow-800">Your Favorite Books</h2>
+
+    <!-- Container where favorites will be rendered -->
+    <div id="favorites-list" class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+      <!-- JS will populate favorite books here -->
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-white pt-10">
+    <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+
+      <!-- About Section -->
+      <div>
+        <h3 class="text-lg font-semibold mb-3 flex justify-center md:justify-start items-center gap-2">
+          <i class="fas fa-book-open text-2xl text-white-300"></i> 
+          Book Explorer
+        </h3>
+        <p class="text-sm text-gray-200">
+          Discover and explore thousands of books across genres. Join our reading community and find your next favorite story today!
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+        <ul class="space-y-2 text-gray-200">
+          <li><a href="index.html" class="hover:text-yellow-300 transition-colors">Home</a></li>
+          <li><a href="about.html" class="hover:text-yellow-300 transition-colors">About</a></li>
+          <li><a href="favourite.html" class="hover:text-yellow-300 transition-colors">Favorites</a></li>
+        </ul>
+      </div>
+
+      <!-- Follow Us -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Follow Us</h4>
+        <div class="flex justify-center md:justify-start space-x-4 text-2xl">
+          <a href="#" class="hover:text-yellow-300 transition-transform transform hover:scale-110"><i class="fab fa-facebook"></i></a>
+          <a href="#" class="hover:text-yellow-300 transition-transform transform hover:scale-110"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="hover:text-yellow-300 transition-transform transform hover:scale-110"><i class="fab fa-instagram"></i></a>
+          <a href="#" class="hover:text-yellow-300 transition-transform transform hover:scale-110"><i class="fab fa-linkedin"></i></a>
+        </div>
+      </div>
+
+      <!-- Contact Info -->
+      <div>
+        <h4 class="text-lg font-semibold mb-3">Contact Info</h4>
+        <ul class="space-y-2 text-gray-200">
+          <li><i class="fas fa-envelope mr-2 text-white-300"></i> books@gmail.com</li>
+          <li><i class="fas fa-phone mr-2 text-white-300"></i> +250780528972</li>
+          <li><i class="fas fa-map-marker-alt mr-2 text-white-300"></i> Kigali, Rwanda</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-gray-400 mt-8"></div>
+
+    <!-- Copyright -->
+    <div class="text-center py-4 text-sm text-gray-200">
+      <p>&copy; 2025 <span class="font-semibold text-white-300">Book Explorer</span>. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="favourite.js"></script>
+  <script>
+    // Render favorites on page load
+    window.addEventListener("DOMContentLoaded", () => {
+      renderFavorites();
+    });
+  </script>
+</body>
+
+</html>
