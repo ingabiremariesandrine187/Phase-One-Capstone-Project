@@ -1,0 +1,306 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Explorer Lab 1</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+  /* Float in/out animation for letters */
+  @keyframes floatInOut {
+    0% { opacity: 0; transform: translateY(20px); }
+    50% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-20px); }
+  }
+
+  .animated-text span {
+    display: inline-block;
+    opacity: 0;
+    animation: floatInOut 3s infinite;
+    animation-delay: calc(0.05s * var(--i));
+  }
+
+  /* Overlay menu toggle without JS */
+  #menu-toggle:checked + label + nav {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body class="bg-gray-50 text-gray-800 relative overflow-x-hidden">
+
+  <!-- Hidden Checkbox for Toggle -->
+  <input type="checkbox" id="menu-toggle" class="hidden">
+
+  <!-- Hamburger Menu Icon -->
+  <label for="menu-toggle" class="fixed top-6 right-6 z-50 cursor-pointer bg-white bg-opacity-90 p-3 rounded-md shadow-lg text-yellow-800  hover:bg-opacity-100">
+    <i class="fa-solid fa-bars text-2xl"></i>
+  </label>
+
+  <!-- Overlay Navbar -->
+  <nav id="mobile-nav"
+    class="fixed top-20 right-6 bg-white text-gray-900 rounded-2xl shadow-xl flex flex-col items-center justify-center space-y-6 text-lg font-bold opacity-0 visibility-hidden transform -translate-y-5 transition-all duration-500 z-40 w-56 py-8">
+    
+    <a href="index.html" class="flex flex-col items-center hover:scale-110 hover:text-gray-900 transition-all duration-200">
+  <i class="fas fa-home text-3xl mb-2"></i>
+  <span>Home</span>
+</a>
+
+
+   <a href="../Lab2/favourite.html" class="flex flex-col items-center hover:scale-110 hover:text-gray-900 transition-all duration-200">
+  <i class="fas fa-heart text-3xl mb-2"></i>
+  <span>Favorites</span>
+</a>
+
+    <a href="about.html" class="flex flex-col items-center hover:scale-110 hover:text-gray-900 transition-all duration-200">
+  <i class="fas fa-info-circle text-3xl mb-2"></i>
+  <span>About</span>
+</a>
+  </nav>
+
+  <!-- Main Content -->
+  <div class="flex flex-col">
+
+   <!-- Hero Section -->
+<section class="relative bg-cover bg-center h-[500px]" style="background-image: url('./Assets/image.png');">
+  <div class="absolute inset-0 bg-gray-800 bg-opacity-20"></div>
+  <div class="relative flex flex-col justify-center items-center text-center px-6 h-full">
+    <h1 class="text-white text-5xl font-extrabold mb-4 animated-text">
+      <span style="--i:1">D</span><span style="--i:2">i</span><span style="--i:3">s</span><span style="--i:4">c</span><span style="--i:5">o</span><span style="--i:6">v</span><span style="--i:7">e</span><span style="--i:8">r</span><span style="--i:9"> </span>
+      <span style="--i:10">Y</span><span style="--i:11">o</span><span style="--i:12">u</span><span style="--i:13">r</span><span style="--i:14"> </span>
+      <span style="--i:15">N</span><span style="--i:16">e</span><span style="--i:17">x</span><span style="--i:18">t</span><span style="--i:19"> </span>
+      <span style="--i:20">F</span><span style="--i:21">a</span><span style="--i:22">v</span><span style="--i:23">o</span><span style="--i:24">r</span><span style="--i:25">i</span><span style="--i:26">t</span><span style="--i:27">e</span><span style="--i:28"> </span>
+      <span style="--i:29">B</span><span style="--i:30">o</span><span style="--i:31">o</span><span style="--i:32">k</span>
+    </h1>
+    <p class="text-gray-200 max-w-2xl mb-8">Browse, explore, and be inspired by great reads.</p>
+
+    <!-- Search bar -->
+    <div class="flex items-center bg-white rounded-full shadow-lg overflow-hidden max-w-xl w-full">
+      <input type="text" placeholder="Search for books..." class="flex-grow px-4 py-2 text-gray-700 outline-none"/>
+      <button class="bg-yellow-800 hover:bg-yellow-700 text-white px-5 py-2 flex items-center gap-2">
+        <i class="fas fa-search"></i> Search
+      </button>
+    </div>
+
+    <!-- Stats cards -->
+    <div class="flex flex-wrap justify-center gap-6 mt-12 text-gray-900">
+      <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md text-center w-36">
+        <i class="fas fa-book-open text-3xl  text-gray-800 mb-2"></i>
+        <h3 class="text-2xl font-bold">10K+</h3>
+        <p class="text-sm text-gray-500">Books</p>
+      </div>
+      <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md text-center w-36">
+        <i class="fas fa-users text-3xl  text-gray-800 mb-2"></i>
+        <h3 class="text-2xl font-bold">5K+</h3>
+        <p class="text-sm text-gray-500">Readers</p>
+      </div>
+      <div class="bg-white bg-opacity-90 p-6 rounded-xl shadow-md text-center w-36">
+        <i class="fas fa-book text-3xl text-gray-800 mb-2"></i>
+        <h3 class="text-2xl font-bold">100+</h3>
+        <p class="text-sm text-gray-500">Daily</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Book Section -->
+    <main class="max-w-7xl mx-auto px-4 py-10">
+  <h2 class="text-2xl font-bold mb-6 text-yellow-800">Book Collection</h2>
+
+  <div class="grid gap-6 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+    <!-- Book Card 1 -->
+   <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition transform hover:-translate-y-1">
+  <!-- Book Cover Image -->
+  <div class="h-56 w-full overflow-hidden">
+  <img 
+    src="./assets/Book1.avif" 
+    alt="Book Cover" 
+    class="h-full w-full object-cover transform hover:scale-105 transition duration-500"
+  />
+</div>
+
+
+  <!-- Book Info -->
+  <div class="p-4 flex flex-col justify-between">
+    <div>
+      <h3 class="font-bold text-lg mb-1">The Great Adventure</h3>
+      <p class="text-sm text-gray-500 mb-3">by Marie</p>
+    </div>
+
+    <!-- Add to Favorites Button -->
+    <button 
+  class="add-fav-btn bg-yellow-800 hover:bg-yellow-700 text-white px-4 py-2 rounded w-full flex items-center justify-center gap-2 transition"
+  data-title="The Great Adventure"
+  data-author="Marie"
+  data-img="./assets/Book1.avif">
+  <i class="fa-solid fa-heart"></i> Add to Favorites
+</button>
+  </div>
+</div>
+
+
+    <!-- Book Card 2 -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
+  <!-- Link around the image -->
+  <a href="https://example.com/book1" target="_blank" class="block">
+    <div class="h-56 bg-gray-200 flex items-center justify-center">
+      <img 
+        src="./assets/Book2.jpeg" 
+        alt="Secrets of the Ocean" 
+        class="h-full w-full object-cover"
+      />
+    </div>
+  </a>
+
+  <div class="p-4 flex flex-col justify-between">
+    <div>
+      <!-- Link around the title -->
+      <a href="https://example.com/book1" target="_blank" class="hover:underline">
+        <h3 class="font-bold text-lg mb-1">Mysteries of the Deep Sea</h3>
+      </a>
+      <p class="text-sm text-gray-500 mb-3">by Sandrine</p>
+    </div>
+
+    <button 
+  class="add-fav-btn bg-yellow-800 hover:bg-yellow-700 text-white px-4 py-2 rounded w-full"
+  data-title="Secrets of the Ocean"
+  data-author="Sandrine"
+  data-img="./assets/Book2.jpeg">
+  <i class="fa-solid fa-heart"></i> Add to Favorites
+</button>
+  </div>
+</div>
+
+
+    <!-- Book Card 3 -->
+    <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
+  <!-- Link around the image -->
+  <a href="https://example.com/book1" target="_blank" class="block">
+    <div class="h-56 bg-gray-200 flex items-center justify-center">
+      <img 
+        src="./assets/Book3.jpeg" 
+        alt="Secrets of the Ocean" 
+        class="h-full w-full object-cover"
+      />
+    </div>
+  </a>
+
+  <div class="p-4 flex flex-col justify-between">
+    <div>
+      <!-- Link around the title -->
+      <a href="https://example.com/book1" target="_blank" class="hover:underline">
+        <h3 class="font-bold text-lg mb-1">Whispers in the Forest</h3>
+      </a>
+      <p class="text-sm text-gray-500 mb-3">by Sandrine</p>
+    </div>
+
+    <button 
+  class="add-fav-btn bg-yellow-800 hover:bg-yellow-700 text-white px-4 py-2 rounded w-full"
+  data-title="Secrets of the Ocean"
+  data-author="Sandrine"
+  data-img="./assets/Book3.jpeg">
+  <i class="fa-solid fa-heart"></i> Add to Favorites
+</button>
+  </div>
+</div>
+
+
+    <!-- Book Card 4 -->
+   <div class="bg-white shadow-md rounded-lg overflow-hidden hover:shadow-lg transition">
+  <!-- Link around the image -->
+  <a href="https://example.com/book1" target="_blank" class="block">
+    <div class="h-56 bg-gray-200 flex items-center justify-center">
+      <img 
+        src="./assets/book4.jpeg" 
+        alt="Secrets of the Ocean" 
+        class="h-full w-full object-cover"
+      />
+    </div>
+  </a>
+
+  <div class="p-4 flex flex-col justify-between">
+    <div>
+      <!-- Link around the title -->
+      <a href="https://example.com/book1" target="_blank" class="hover:underline">
+        <h3 class="font-bold text-lg mb-1">Secrets of the Ocean</h3>
+      </a>
+      <p class="text-sm text-gray-500 mb-3">by Sandrine</p>
+    </div>
+
+   <button 
+  class="add-fav-btn bg-yellow-800 hover:bg-yellow-700 text-white px-4 py-2 rounded w-full"
+  data-title="Secrets of the Ocean"
+  data-author="Sandrine"
+  data-img="./assets/book4.jpeg">
+  <i class="fa-solid fa-heart"></i> Add to Favorites
+</button>
+  </div>
+</div>
+  </div>
+  
+</main>
+
+
+   <footer class="bg-gray-900 text-white pt-10">
+  <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-8 text-center md:text-left">
+
+    <!-- About Section -->
+    <div>
+      <h3 class="text-lg font-semibold mb-3 flex justify-center md:justify-start items-center gap-2">
+        <i class="fas fa-book-open text-2xl text-white-300"></i> 
+        Book Explorer
+      </h3>
+      <p class="text-sm text-gray-200">
+        Discover and explore thousands of books across genres. Join our reading community and find your next favorite story today!
+      </p>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+      <h4 class="text-lg font-semibold mb-3">Quick Links</h4>
+      <ul class="space-y-2 text-gray-200">
+        <li><a href="#" class="hover:text-yellow-300 transition-colors">Home</a></li>
+        <li><a href="#" class="hover:text-yellow-300 transition-colors">About</a></li>
+        <li><a href="#" class="hover:text-yellow-300 transition-colors">Favorites</a></li>
+      </ul>
+    </div>
+
+    <!-- Follow Us -->
+    <div>
+      <h4 class="text-lg font-semibold mb-3">Follow Us</h4>
+      <div class="flex justify-center md:justify-start space-x-4 text-2xl">
+        <a href="#" class="hover:text-yellow-300 transition-transform transform hover:scale-110"><i class="fab fa-facebook"></i></a>
+        <a href="#" class="hover:text-yellow-300 transition-transform transform hover:scale-110"><i class="fab fa-twitter"></i></a>
+        <a href="#" class="hover:text-yellow-300 transition-transform transform hover:scale-110"><i class="fab fa-instagram"></i></a>
+        <a href="#" class="hover:text-yellow-300 transition-transform transform hover:scale-110"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div>
+      <h4 class="text-lg font-semibold mb-3">Contact Info</h4>
+      <ul class="space-y-2 text-gray-200">
+        <li><i class="fas fa-envelope mr-2 text-white-300"></i> books@gmail.com</li>
+        <li><i class="fas fa-phone mr-2 text-white-300"></i> +250780528972</li>
+        <li><i class="fas fa-map-marker-alt mr-2 text-white-300"></i> Kigali, Rwanda</li>
+      </ul>
+    </div>
+  </div>
+
+  
+  <div class="border-t border-gray-400 mt-8"></div>
+
+  <!-- Copyright -->
+  <div class="text-center py-4 text-sm text-gray-200">
+    <p>&copy; 2025 <span class="font-semibold text-white-300">Book Explorer</span>. All Rights Reserved.</p>
+  </div>
+</footer>
+
+  </div>
+  <script src="../Lab2/favourite.js"></script>
+</body>
+</html>
